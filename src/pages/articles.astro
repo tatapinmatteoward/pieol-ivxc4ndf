@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Articles: Porky Pie Recipes & Baking Wisdom";
+const pageDescription = "Explore our collection of delicious porky pie recipes, baking tips, and insightful articles at The Porky Pantry. Dive into rustic flavors and expert advice for your next baking adventure.";
+
+const featuredArticles = [
+  {
+    title: "Classic Porky Pie: A Timeless Recipe",
+    excerpt: "Dive into the heart of our signature pie with step-by-step instructions and pro tips for achieving golden perfection.",
+    tags: ["recipe", "classic"],
+    readTime: "8 min read"
+  },
+  {
+    title: "Baking with Natural Textures: Rustic Crusts",
+    excerpt: "Learn how to incorporate earthy elements like whole grains and herbs for that authentic rustic feel.",
+    tags: ["technique", "crust"],
+    readTime: "6 min read"
+  },
+  {
+    title: "Seasonal Ingredients for Maximum Flavor",
+    excerpt: "Discover how to elevate your porky pies with the freshest seasonal produce and spices.",
+    tags: ["seasonal", "flavor"],
+    readTime: "10 min read"
+  }
+];
+
+const articleCategories = [
+  { name: "Recipes", count: 12 },
+  { name: "Baking Tips", count: 8 },
+  { name: "Ingredient Guides", count: 5 },
+  { name: "Techniques", count: 7 }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-[#228B22] to-[#1a6b1a] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIiBmaWxsPSIjZmZmZmZmIi8+PC9zdmc+')] w-full h-full"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+          Articles: Porky Pie Recipes & Baking Wisdom
+        </h1>
+        <p class="text-xl text-[#FFDB58]/90 font-serif max-w-2xl mx-auto">
+          Explore our collection of delicious porky pie recipes, baking tips, and insightful articles at The Porky Pantry. Dive into rustic flavors and expert advice for your next baking adventure.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section class="py-16 bg-gradient-to-b from-[#f8f5f0] to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center justify-center mb-8">
+          <div class="w-24 h-1 bg-[#228B22]"></div>
+          <i class="fas fa-leaf text-[#228B22] text-2xl mx-4"></i>
+          <div class="w-24 h-1 bg-[#228B22]"></div>
+        </div>
+        <h2 class="text-3xl font-serif font-bold text-center text-[#228B22] mb-6">Welcome to The Porky Pantry Articles</h2>
+        <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+          <p class="mb-4">
+            Discover a treasure trove of <em class="text-[#228B22]">mouthwatering porky pie recipes</em> and <em class="text-[#228B22]">baking insights</em> right here. Our articles blend rustic charm with practical wisdom, perfect for home bakers seeking that perfect flaky crust or savory filling.
+          </p>
+          <p>
+            Whether you're a novice pie enthusiast or a seasoned baker, our curated collection offers something delicious for everyone. From seasonal ingredients to troubleshooting tips, we've got you covered.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Articles -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-serif font-bold text-[#228B22] mb-4">Featured Articles</h2>
+        <div class="w-24 h-1 bg-[#FFDB58] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredArticles.map((article, index) => (
+          <div 
+            class="bg-[#f8f5f0] rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-[#e8e0d0]"
+            style="animation-delay: ${index * 100}ms"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-serif font-bold text-[#228B22] mb-2">{article.title}</h3>
+                <span class="bg-[#FFDB58] text-[#228B22] text-xs font-bold px-2 py-1 rounded-full">
+                  {article.readTime}
+                </span>
+              </div>
+              <p class="text-gray-700 mb-4">{article.excerpt}</p>
+              <div class="flex flex-wrap gap-2">
+                {article.tags.map(tag => (
+                  <span class="bg-[#228B22]/10 text-[#228B22] text-xs px-2 py-1 rounded">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <button class="mt-6 w-full py-2 bg-[#228B22] text-white rounded-md hover:bg-[#1a6b1a] transition-colors duration-300 flex items-center justify-center">
+                Read More
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="py-16 bg-[#f8f5f0]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-serif font-bold text-[#228B22] mb-4">Article Categories</h2>
+        <div class="w-24 h-1 bg-[#FFDB58] mx-auto"></div>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+          Browse through our different categories to find exactly what you're looking for
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        {articleCategories.map((category) => (
+          <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <i class="fas fa-book text-3xl text-[#228B22] mb-3"></i>
+            <h3 class="font-serif font-bold text-lg text-[#228B22] mb-2">{category.name}</h3>
+            <span class="text-sm text-gray-600">{category.count} articles</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="py-16 bg-gradient-to-r from-[#228B22] to-[#1a6b1a]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-serif font-bold text-white mb-4">Stay Updated</h2>
+        <p class="text-[#FFDB58]/90 mb-8 text-lg">
+          Get the latest recipes and baking insights delivered straight to your inbox
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+          <input 
+            type="email" 
+            placeholder="Your email address" 
+            class="flex-grow px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFDB58]"
+          />
+          <button class="px-6 py-3 bg-[#FFDB58] text-[#228B22] font-bold rounded-md hover:bg-[#e6c743] transition-colors duration-300">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .bg-pattern {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIiBmaWxsPSIjZmZmZmZmIi8+PC9zdmc+");
+    background-size: 20px 20px;
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+</style>

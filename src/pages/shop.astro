@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Shop - The Porky Pantry";
+const pageDescription = "Discover our curated selection of premium baking tools, ingredients, and Porky Pie recipe books at The Porky Pantry. Elevate your baking with rustic, high-quality essentials.";
+const featuredProducts = [
+  {
+    name: "Porky Pie Recipe Book",
+    description: "Our bestseller: A comprehensive guide with 50+ authentic recipes, tips, and baking secrets. Perfect for beginners and pros alike.",
+    price: "$24.99",
+    image: "recipe-book.jpg"
+  },
+  {
+    name: "Rustic Pie Pan Set",
+    description: "Crafted from seasoned cast iron for even baking and a beautiful golden crust. Includes three sizes for versatile pies.",
+    price: "$49.99",
+    image: "pie-pan.jpg"
+  },
+  {
+    name: "Organic Pork Seasoning Blend",
+    description: "A savory mix of herbs and spices to enhance your porky pie flavors. Organic and sustainably sourced.",
+    price: "$12.99",
+    image: "seasoning-blend.jpg"
+  }
+];
+const testimonials = [
+  {
+    text: "The recipe book transformed my baking. The porky pie I make now is a family favorite!",
+    author: "Sarah M."
+  },
+  {
+    text: "The cast iron pan set is incredible. My pies always turn out perfectly golden.",
+    author: "Michael T."
+  },
+  {
+    text: "The seasoning blend brings such authentic flavor to my porky pies. Highly recommended!",
+    author: "Emma L."
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-[#228B22] to-[#1a6b1a] py-24">
+    <div class="absolute inset-0 bg-black opacity-20"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Shop</h1>
+        <p class="text-xl text-[#FFDB58] mb-8">Premium baking tools, ingredients, and recipes for the authentic porky pie experience</p>
+        <div class="bg-[#FFDB58] w-24 h-1 mx-auto mb-8"></div>
+        <p class="text-lg text-white max-w-2xl mx-auto">Discover our curated collection designed to inspire and elevate your culinary journey</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="py-16 bg-[#f8f5f0]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#228B22] mb-4">Featured Products</h2>
+        <div class="w-20 h-1 bg-[#FFDB58] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredProducts.map((product, index) => (
+          <div key={index} class="bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 border border-[#e0d8c8]">
+            <div class="h-64 bg-[#e0d8c8] flex items-center justify-center">
+              <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-serif font-bold text-[#228B22] mb-2">{product.name}</h3>
+              <p class="text-gray-700 mb-4">{product.description}</p>
+              <div class="flex justify-between items-center">
+                <span class="text-lg font-bold text-[#FFDB58]">{product.price}</span>
+                <button class="bg-[#228B22] hover:bg-[#1a6b1a] text-white px-4 py-2 rounded transition duration-300">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Details Section -->
+  <section class="py-16 bg-[#fffefc]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center">
+        <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-12">
+          <div class="bg-[#e0d8c8] h-96 flex items-center justify-center rounded-lg shadow-inner">
+            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-32" />
+          </div>
+        </div>
+        <div class="lg:w-1/2">
+          <h2 class="text-3xl font-serif font-bold text-[#228B22] mb-6">Our Story</h2>
+          <p class="text-gray-700 mb-6">
+            At The Porky Pantry, we believe in the art of traditional baking with a modern twist. 
+            Our products are crafted with care using natural ingredients and time-honored techniques.
+          </p>
+          <p class="text-gray-700 mb-8">
+            From our handcrafted recipe books to our rustic pie pans, every item in our collection 
+            is designed to bring authenticity and warmth to your kitchen experience. 
+            Let us inspire your next gourmet creation.
+          </p>
+          <div class="flex space-x-4">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-[#228B22]">50+</div>
+              <div class="text-gray-600">Recipes</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-[#228B22]">100%</div>
+              <div class="text-gray-600">Organic</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-[#228B22]">30+</div>
+              <div class="text-gray-600">Years</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-[#f0e6d2]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-serif font-bold text-[#228B22] mb-4">What Our Customers Say</h2>
+        <div class="w-20 h-1 bg-[#FFDB58] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="bg-white p-8 rounded-lg shadow-md border border-[#e0d8c8]">
+            <div class="text-[#FFDB58] text-3xl mb-4">"</div>
+            <p class="text-gray-700 mb-6 italic">{testimonial.text}</p>
+            <p class="font-serif font-bold text-[#228B22]">— {testimonial.author}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-[#228B22] to-[#1a6b1a]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Ready to Elevate Your Baking?</h2>
+      <p class="text-xl text-[#FFDB58] max-w-2xl mx-auto mb-10">Join our community of porky pie enthusiasts and discover the finest ingredients and tools for your culinary journey.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-[#FFDB58] hover:bg-yellow-400 text-[#228B22] font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+          Shop Now
+        </button>
+        <button class="bg-transparent border-2 border-white hover:bg-white hover:text-[#228B22] text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+          View Recipes
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+  
+  body {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .bg-[#f8f5f0] {
+    background-color: #f8f5f0;
+  }
+  
+  .bg-[#fffefc] {
+    background-color: #fffefc;
+  }
+  
+  .bg-[#f0e6d2] {
+    background-color: #f0e6d2;
+  }
+  
+  .border-[#e0d8c8] {
+    border-color: #e0d8c8;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .transition-transform {
+    transition: transform 0.3s ease;
+  }
+  
+  .transform.hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+</style>

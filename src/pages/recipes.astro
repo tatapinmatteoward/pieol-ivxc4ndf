@@ -1,0 +1,324 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Artisanal Porky Pie Recipes";
+const pageDescription = "Discover our collection of masterful pork pie recipes at PieCraft Pro. From classic British pork pies to innovative twists, learn to craft delectable, flaky masterpieces that embody the art of artisanal baking.";
+const recipes = [
+  {
+    id: 1,
+    title: "Classic Pork Pie",
+    prepTime: "30 mins",
+    cookTime: "1 hour",
+    serves: 6,
+    description: "This timeless recipe captures the essence of a proper pork pie—succulent minced pork encased in hot water pastry.",
+    ingredients: [
+      "500g pork shoulder, finely chopped",
+      "200g lard",
+      "400g plain flour",
+      "150ml water",
+      "Salt and pepper to taste",
+      "1 tsp ground mixed herbs"
+    ],
+    steps: [
+      "Prepare the filling by mixing pork with seasonings",
+      "Make the pastry with lard and flour",
+      "Roll out pastry and line a pie dish",
+      "Add filling and cover with pastry",
+      "Bake at 180°C for 45 minutes"
+    ]
+  },
+  {
+    id: 2,
+    title: "Spiced Lamb & Apple Pie",
+    prepTime: "45 mins",
+    cookTime: "1 hour 15 mins",
+    serves: 8,
+    description: "A modern twist on traditional pie-making with sweet and savory flavors combining lamb with spiced apples.",
+    ingredients: [
+      "600g lamb shoulder, diced",
+      "4 large apples, peeled and sliced",
+      "100g butter",
+      "300g plain flour",
+      "100ml milk",
+      "2 tsp cinnamon",
+      "1 tsp nutmeg"
+    ],
+    steps: [
+      "Brown lamb and set aside",
+      "Cook apples with spices until tender",
+      "Make the pastry base with butter and milk",
+      "Layer lamb and apples in pastry case",
+      "Bake at 190°C for 1 hour"
+    ]
+  },
+  {
+    id: 3,
+    title: "Herb & Gouda Pork Pie",
+    prepTime: "35 mins",
+    cookTime: "1 hour 10 mins",
+    serves: 6,
+    description: "A sophisticated blend of herbs and creamy Gouda cheese in our traditional pork pie foundation.",
+    ingredients: [
+      "500g pork shoulder, finely chopped",
+      "200g Gouda cheese, grated",
+      "200g butter",
+      "400g plain flour",
+      "150ml milk",
+      "2 tbsp fresh rosemary",
+      "2 tbsp fresh thyme"
+    ],
+    steps: [
+      "Prepare pork with herbs and cheese",
+      "Create a rich pastry with butter and milk",
+      "Roll pastry and form into pie shell",
+      "Fill with herb-infused pork and cheese",
+      "Bake at 180°C for 1 hour"
+    ]
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="relative overflow-hidden">
+    {/* Hero Section */}
+    <div class="bg-gradient-to-r from-[#000033] to-[#000066] py-24 relative">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiMwMDAwNjYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')] opacity-10"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Artisanal Porky Pie Recipes
+          </h1>
+          <p class="text-xl text-[#ff7f50] mb-10 font-medium">
+            Master the Art of Artisanal Porky Pies
+          </p>
+          <p class="text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">
+            Discover our collection of masterful pork pie recipes at PieCraft Pro. From classic British pork pies to innovative twists, learn to craft delectable, flaky masterpieces that embody the art of artisanal baking.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* Featured Recipes Section */}
+    <section class="py-20 bg-gradient-to-b from-[#000033] to-[#00001a]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Featured Recipes
+          </h2>
+          <div class="w-24 h-1 bg-[#ff7f50] mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {recipes.map((recipe) => (
+            <div 
+              key={recipe.id} 
+              class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+            >
+              <div class="h-48 bg-gradient-to-r from-[#000033] to-[#000066] relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <i class="fas fa-utensils text-5xl text-[#ff7f50]"></i>
+                </div>
+                <div class="absolute bottom-4 left-4 bg-[#ff7f50] text-white px-4 py-2 rounded-full text-sm font-bold">
+                  {recipe.serves} serves
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h3 class="text-xl font-bold text-[#000033]">{recipe.title}</h3>
+                  <div class="flex space-x-2">
+                    <span class="bg-[#000066] text-white text-xs px-2 py-1 rounded">
+                      <i class="fas fa-clock mr-1"></i> {recipe.prepTime}
+                    </span>
+                    <span class="bg-[#000066] text-white text-xs px-2 py-1 rounded">
+                      <i class="fas fa-fire mr-1"></i> {recipe.cookTime}
+                    </span>
+                  </div>
+                </div>
+                <p class="text-gray-600 mb-6">{recipe.description}</p>
+                
+                <div class="mb-6">
+                  <h4 class="font-bold text-[#000033] mb-2 flex items-center">
+                    <i class="fas fa-list mr-2 text-[#ff7f50]"></i> Ingredients
+                  </h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    {recipe.ingredients.slice(0, 3).map((ingredient, index) => (
+                      <li key={index} class="flex items-start">
+                        <span class="text-[#ff7f50] mr-2">•</span>
+                        {ingredient}
+                      </li>
+                    ))}
+                    {recipe.ingredients.length > 3 && (
+                      <li class="text-[#ff7f50]">+ {recipe.ingredients.length - 3} more ingredients</li>
+                    )}
+                  </ul>
+                </div>
+                
+                <button class="w-full py-3 bg-gradient-to-r from-[#ff7f50] to-[#ff6347] text-white font-bold rounded-lg hover:from-[#ff6347] hover:to-[#ff7f50] transition-all duration-300 transform hover:scale-105">
+                  View Full Recipe
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* How to Bake Section */}
+    <section class="py-20 bg-[#00001a]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Master the Perfect Pie
+          </h2>
+          <p class="text-[#ff7f50] max-w-2xl mx-auto">
+            Our step-by-step guide to creating flaky, flavorful artisanal pork pies
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="bg-[#000033] p-8 rounded-xl shadow-xl">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 rounded-full bg-[#ff7f50] flex items-center justify-center mr-4">
+                <span class="text-white font-bold text-xl">1</span>
+              </div>
+              <h3 class="text-xl font-bold text-white">Prepare the Dough</h3>
+            </div>
+            <p class="text-gray-300 mb-6">
+              Use a 3:2 ratio of flour to fat for the perfect flaky crust. Remember to keep ingredients cold.
+            </p>
+            
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 rounded-full bg-[#ff7f50] flex items-center justify-center mr-4">
+                <span class="text-white font-bold text-xl">2</span>
+              </div>
+              <h3 class="text-xl font-bold text-white">Create the Filling</h3>
+            </div>
+            <p class="text-gray-300 mb-6">
+              Combine your meat with traditional seasonings and let the flavors meld for 30 minutes before baking.
+            </p>
+            
+            <div class="flex items-center">
+              <div class="w-12 h-12 rounded-full bg-[#ff7f50] flex items-center justify-center mr-4">
+                <span class="text-white font-bold text-xl">3</span>
+              </div>
+              <h3 class="text-xl font-bold text-white">Bake to Perfection</h3>
+            </div>
+            <p class="text-gray-300">
+              Bake at 180°C for 1 hour and let it rest for 10 minutes before serving for maximum flavor.
+            </p>
+          </div>
+          
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-[#ff7f50] to-[#ff6347] rounded-xl opacity-20 blur-xl"></div>
+            <div class="relative bg-gradient-to-br from-[#000033] to-[#000066] p-8 rounded-xl shadow-2xl border border-[#ff7f50]">
+              <div class="flex justify-between items-start mb-6">
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-2">Tips for Success</h3>
+                  <p class="text-[#ff7f50]">Expert advice from our master bakers</p>
+                </div>
+                <i class="fas fa-lightbulb text-[#ff7f50] text-3xl"></i>
+              </div>
+              
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-[#ff7f50] mt-1 mr-3"></i>
+                  <span class="text-gray-300">Chill your dough for at least 30 minutes before rolling</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-[#ff7f50] mt-1 mr-3"></i>
+                  <span class="text-gray-300">Use a sharp knife to make clean cuts in the pastry</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-[#ff7f50] mt-1 mr-3"></i>
+                  <span class="text-gray-300">Create a decorative pattern on top of the crust</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-[#ff7f50] mt-1 mr-3"></i>
+                  <span class="text-gray-300">Let pies rest 10 minutes before serving</span>
+                </li>
+              </ul>
+              
+              <div class="mt-8 p-4 bg-[#ff7f50] rounded-lg text-center">
+                <p class="font-bold text-white">Ready to impress your guests?</p>
+                <button class="mt-3 px-6 py-2 bg-white text-[#000033] font-bold rounded-full hover:bg-gray-100 transition-colors">
+                  Start Baking Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Testimonial Section */}
+    <section class="py-20 bg-gradient-to-r from-[#000033] to-[#000066]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            What Our Bakers Say
+          </h2>
+          <div class="w-24 h-1 bg-[#ff7f50] mx-auto"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-xl shadow-xl p-8 md:p-12 relative">
+            <div class="absolute top-0 left-0 w-16 h-16 bg-[#ff7f50] rounded-full flex items-center justify-center transform -translate-y-8 -translate-x-8">
+              <i class="fas fa-quote-left text-white text-2xl"></i>
+            </div>
+            <p class="text-xl text-gray-700 italic mb-8">
+              "These recipes transformed my approach to pork pies. The precision required in the crust-making process creates a truly artisanal experience. My family and friends think I'm a professional baker!"
+            </p>
+            <div class="flex items-center">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-r from-[#000033] to-[#000066] flex items-center justify-center mr-4">
+                <i class="fas fa-user text-[#ff7f50] text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#000033]">Sarah Johnson</h4>
+                <p class="text-[#ff7f50]">Master Baker, PieCraft Pro</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  .custom-animation {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  .gradient-border {
+    position: relative;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #000033, #ff7f50, #000066, #ff6347);
+    z-index: -1;
+    border-radius: 12px;
+    opacity: 0.3;
+    filter: blur(10px);
+  }
+</style>

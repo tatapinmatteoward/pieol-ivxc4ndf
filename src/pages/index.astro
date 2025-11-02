@@ -1,0 +1,204 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Pieologist: Unveiling the Science and Stories Behind Porky Pies";
+const pageDescription = "Discover the intriguing science, psychology, and real-life tales of deception. Our tech-savvy infographics break down how lies work, why we tell them, and how to spot them in a digital age.";
+
+const keyInsights = [
+  {
+    title: "The Brain on Lies",
+    description: "Neuroimaging shows the prefrontal cortex lights up when we fib, but habitual liars show less activity—practice makes... easier?",
+    icon: "fas fa-brain"
+  },
+  {
+    title: "Detection Rates",
+    description: "Humans spot lies 54% of the time, but accuracy drops to 45% under stress. Our brains aren't wired for deception detection.",
+    icon: "fas fa-eye"
+  },
+  {
+    title: "The Evolutionary Edge",
+    description: "White lies may have evolved to maintain social harmony, but they're also a cognitive burden our brains struggle to manage.",
+    icon: "fas fa-dna"
+  }
+];
+
+const infographics = [
+  {
+    title: "Deception Patterns",
+    description: "How lies spread through social networks and digital media",
+    color: "from-blue-500 to-cyan-400"
+  },
+  {
+    title: "Psychology of Lying",
+    description: "The mental processes behind our fibs",
+    color: "from-indigo-500 to-teal-400"
+  },
+  {
+    title: "Digital Deception",
+    description: "Modern lies in the age of misinformation",
+    color: "from-purple-500 to-cyan-300"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="min-h-screen">
+    {/* Hero Section */}
+    <div class="relative bg-gradient-to-br from-primary to-accent py-24 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#000080_1px,transparent_1px)] [background-size:20px_20px]"></div>
+      </div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Pieologist
+          </h1>
+          <p class="text-xl md:text-2xl text-cyan-100 mb-8 max-w-3xl mx-auto">
+            Unveiling the Science and Stories Behind Porky Pies
+          </p>
+          <p class="text-lg text-cyan-200 max-w-2xl mx-auto">
+            In a world overflowing with misinformation, *Pieologist* is your guide to the truth. 
+            We blend cutting-edge science, psychology, and captivating narratives to dissect 
+            the art of deception—those sneaky 'porky pies' we all encounter daily.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* Why Lies Fascinate Section */}
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Why Lies Fascinate Us</h2>
+          <div class="w-24 h-1 bg-accent mx-auto"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+          <p class="text-lg text-gray-700 mb-10 text-center leading-relaxed">
+            Lies aren't just fibs; they're a universal human trait rooted in evolution, brain chemistry, and social dynamics. 
+            Our mission? To make this complex topic accessible and engaging through interactive infographics and data-driven stories.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {keyInsights.map((insight, index) => (
+              <div 
+                key={index} 
+                class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-accent hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div class="text-4xl text-primary mb-4">
+                  <i class={insight.icon}></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">{insight.title}</h3>
+                <p class="text-gray-600">{insight.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Infographics Section */}
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Interactive Infographics</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Visualizing the science behind deception through data-driven storytelling
+          </p>
+          <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {infographics.map((graphic, index) => (
+            <div 
+              key={index} 
+              class="rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105"
+            >
+              <div class={`h-48 bg-gradient-to-r ${graphic.color} flex items-center justify-center`}>
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-full p-6">
+                  <i class="fas fa-chart-line text-white text-4xl"></i>
+                </div>
+              </div>
+              <div class="p-6 bg-gray-50">
+                <h3 class="text-xl font-bold text-primary mb-2">{graphic.title}</h3>
+                <p class="text-gray-600">{graphic.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Stats Section */}
+    <section class="py-16 bg-gradient-to-r from-primary to-accent text-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">The Numbers Behind Deception</h2>
+          <p class="text-xl text-cyan-100 max-w-2xl mx-auto">
+            Data reveals fascinating patterns in how lies are told, detected, and believed
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div class="text-center p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-sm">
+            <div class="text-4xl font-bold mb-2">73%</div>
+            <p class="text-cyan-100">Of people admit to lying at least once a week</p>
+          </div>
+          
+          <div class="text-center p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-sm">
+            <div class="text-4xl font-bold mb-2">54%</div>
+            <p class="text-cyan-100">Humans spot lies in conversation</p>
+          </div>
+          
+          <div class="text-center p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-sm">
+            <div class="text-4xl font-bold mb-2">92%</div>
+            <p class="text-cyan-100">Of lies are told to protect others</p>
+          </div>
+          
+          <div class="text-center p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-sm">
+            <div class="text-4xl font-bold mb-2">12%</div>
+            <p class="text-cyan-100">Of lies are told for personal gain</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Ready to Uncover the Truth?</h2>
+          <p class="text-lg text-gray-700 mb-10 max-w-2xl mx-auto">
+            Join thousands of curious minds exploring the fascinating world of deception science. 
+            Discover how lies work, why we tell them, and how to detect them in our digital age.
+          </p>
+          <button class="bg-primary hover:bg-indigo-800 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Explore Our Research
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 128, 128, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 128, 128, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 128, 128, 0); }
+  }
+</style>

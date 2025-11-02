@@ -1,0 +1,37 @@
+---
+const currentYear = new Date().getFullYear();
+const socialLinks = [
+  { icon: 'fab fa-twitter', url: '#' },
+  { icon: 'fab fa-facebook', url: '#' },
+  { icon: 'fab fa-instagram', url: '#' },
+  { icon: 'fab fa-linkedin', url: '#' }
+];
+---
+
+<footer class="bg-[#000080] text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <p class="text-lg font-semibold">Pieologist</p>
+        <p class="text-sm opacity-75">&copy; {currentYear} Pieologist. All rights reserved.</p>
+      </div>
+      
+      <div class="flex space-x-4">
+        {socialLinks.map((link, index) => (
+          <a 
+            href={link.url} 
+            key={index}
+            class="text-white hover:text-[#008080] transition-colors duration-300"
+            aria-label={`Follow us on ${link.icon.split('-')[2]}`}
+          >
+            <i class={link.icon}></i>
+          </a>
+        ))}
+      </div>
+    </div>
+    
+    <div class="mt-6 pt-6 border-t border-[#008080] text-center text-sm opacity-75">
+      <p>Empowering tech-savvy learners with data-driven insights</p>
+    </div>
+  </div>
+</footer>

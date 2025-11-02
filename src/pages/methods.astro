@@ -1,0 +1,244 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Crafting Methods";
+const pageDescription = "Explore the precise and passionate methods we employ at PieCraft Pro to create our exceptional artisanal porky pies, from sourcing premium ingredients to masterful baking techniques.";
+const methods = [
+  {
+    title: "Sourcing Premium Ingredients",
+    description: "Quality starts at the source. We partner with local, ethical suppliers to ensure grass-fed pork, seasonal herbs, and stone-ground flours.",
+    icon: "fa-seedling"
+  },
+  {
+    title: "Handcrafted Dough",
+    description: "Our pastry is made with clarified butter and stone-ground flour, creating a flaky, golden crust that melts in your mouth.",
+    icon: "fa-utensils"
+  },
+  {
+    title: "Traditional Techniques",
+    description: "Blending time-honored British methods with contemporary flair for perfectly crispy, juicy pies.",
+    icon: "fa-oven"
+  },
+  {
+    title: "Precision Baking",
+    description: "Every pie is baked to perfection with temperature control and timing that ensures consistent excellence.",
+    icon: "fa-bread-slice"
+  }
+];
+const ingredients = [
+  {
+    name: "Grass-fed Pork",
+    description: "Sourced from heritage breeds for rich flavor and tenderness"
+  },
+  {
+    name: "Seasonal Herbs",
+    description: "Hand-picked thyme, sage, and our secret blend of warming spices"
+  },
+  {
+    name: "Stone-ground Flour",
+    description: "For a flaky, golden pastry that melts in your mouth"
+  },
+  {
+    name: "Clarified Butter",
+    description: "Creates the perfect texture for our signature crust"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="relative">
+    {/* Hero Section */}
+    <div class="bg-gradient-to-r from-primary to-accent py-24 md:py-32">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Crafting Methods
+        </h1>
+        <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto">
+          Master the Art of Artisanal Porky Pies
+        </p>
+      </div>
+    </div>
+
+    {/* Introduction Section */}
+    <div class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+            Mastering the Art of Porky Pies
+          </h2>
+          <div class="prose prose-lg max-w-none text-gray-700">
+            <p>
+              At PieCraft Pro, our <span class="font-bold text-accent">artisanal porky pies</span> are more than just food—they're a symphony of tradition and innovation. We blend time-honored British techniques with contemporary flair to deliver pies that are <span class="font-bold text-accent">crispy, juicy, and utterly irresistible</span>. 
+            </p>
+            <p class="mt-4">
+              Dive into our methods to see how we elevate every step of the process.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Methods Grid */}
+    <div class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary text-center mb-16">
+          Our Precise Methods
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {methods.map((method, index) => (
+            <div 
+              key={index} 
+              class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+            >
+              <div class="p-6">
+                <div class="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-6">
+                  <i class={`fas ${method.icon} text-white text-2xl`}></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">{method.title}</h3>
+                <p class="text-gray-600">{method.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Ingredients Section */}
+    <div class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary text-center mb-16">
+          Premium Ingredients
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {ingredients.map((ingredient, index) => (
+            <div 
+              key={index} 
+              class="bg-gradient-to-br from-primary to-primary/90 rounded-xl p-6 text-white transition-all duration-300 hover:shadow-xl"
+            >
+              <h3 class="text-xl font-bold mb-3">{ingredient.name}</h3>
+              <p class="text-gray-200">{ingredient.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Process Section */}
+    <div class="py-16 bg-gradient-to-r from-primary to-accent text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-8">Our Craftsmanship Process</h2>
+          <div class="relative">
+            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-white/30 hidden md:block"></div>
+            <div class="space-y-12 md:space-y-0">
+              <div class="relative md:flex md:items-center">
+                <div class="md:w-1/2 md:pr-8 mb-6 md:mb-0">
+                  <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 h-full">
+                    <div class="text-4xl font-bold text-accent mb-2">1</div>
+                    <h3 class="text-xl font-bold mb-3">Ingredient Selection</h3>
+                    <p>All ingredients are handpicked from ethical suppliers ensuring only the finest materials for our pies.</p>
+                  </div>
+                </div>
+                <div class="md:w-1/2 md:pl-8 flex justify-center">
+                  <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
+                    <div class="w-4 h-4 rounded-full bg-white"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="relative md:flex md:items-center">
+                <div class="md:w-1/2 md:pl-8">
+                  <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 h-full">
+                    <div class="text-4xl font-bold text-accent mb-2">2</div>
+                    <h3 class="text-xl font-bold mb-3">Handcrafted Preparation</h3>
+                    <p>Each pie is crafted by hand with attention to detail, ensuring perfect texture and flavor balance.</p>
+                  </div>
+                </div>
+                <div class="md:w-1/2 md:pr-8 flex justify-center">
+                  <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
+                    <div class="w-4 h-4 rounded-full bg-white"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="relative md:flex md:items-center">
+                <div class="md:w-1/2 md:pr-8 mb-6 md:mb-0">
+                  <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 h-full">
+                    <div class="text-4xl font-bold text-accent mb-2">3</div>
+                    <h3 class="text-xl font-bold mb-3">Precision Baking</h3>
+                    <p>Each pie is baked to perfection with precise temperature control to achieve our signature crispness.</p>
+                  </div>
+                </div>
+                <div class="md:w-1/2 md:pl-8 flex justify-center">
+                  <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
+                    <div class="w-4 h-4 rounded-full bg-white"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="relative md:flex md:items-center">
+                <div class="md:w-1/2 md:pl-8">
+                  <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 h-full">
+                    <div class="text-4xl font-bold text-accent mb-2">4</div>
+                    <h3 class="text-xl font-bold mb-3">Artisanal Presentation</h3>
+                    <p>Every pie is carefully presented to showcase its beauty and invite you to savor every bite.</p>
+                  </div>
+                </div>
+                <div class="md:w-1/2 md:pr-8 flex justify-center">
+                  <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
+                    <div class="w-4 h-4 rounded-full bg-white"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Call to Action */}
+    <div class="py-16 bg-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+          Ready to Experience Our Craft?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+          Discover the artistry behind every bite with our premium artisanal porky pies.
+        </p>
+        <button class="bg-accent hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+          Order Now
+        </button>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+  
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+  
+  .shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  .hover\:shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .hover\:-translate-y-2:hover {
+    transform: translateY(-0.5rem);
+  }
+  
+  .hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+</style>
